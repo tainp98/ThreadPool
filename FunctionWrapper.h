@@ -17,7 +17,7 @@ class FunctionWrapper{
     };
 public:
     template<typename F, typename... Args>
-    FunctionWrapper(F&& f, Args... args):
+    FunctionWrapper(F&& f, Args &&... args):
         impl(new impl_type(std::bind(std::move(f), args...)))
     { }
 
